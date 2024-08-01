@@ -1,0 +1,19 @@
+ {% extends "base.html" %}
+<html>
+<head>
+    {% block title %}
+  <title>Page Title</title>
+  {% endblock %}
+</head>
+<body>
+    {% block content %}
+
+        <form method ='post'>
+             {% csrf_token %}
+             {{forms.as_p}}
+             <button type='submit' class='btn btn-outline-success'>Submit</button> 
+        </form>
+
+    {% endblock %}
+</body>
+</html>

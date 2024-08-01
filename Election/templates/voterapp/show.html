@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}
+  <title>Page Title</title>
+{% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Voter_Id</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>gender</th>
+                <th>address</th>
+                <th>city</th>
+                <th>state</th>
+                <th>picode</th>
+                <th>date_Of_birth</th>
+                <th>contact</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vp in voters %}
+            <tr>
+                <td>{{vp.voter_id}}</td>
+                <td>{{vp.first_name}}</td>
+                <td>{{vp.last_name}}</td>
+                <td>{{vp.gender}}</td>
+                <td>{{vp.address}}</td>
+                <td>{{vp.city}}</td>
+                <td>{{vp.state}}</td>
+                <td>{{vp.pincode}}</td>
+                <td>{{vp.date_of_birth}}</td>
+                <td>{{vp.contact}}</td>
+                <td>
+                    <a href="{% url 'candidate' vp.pk %}" class="btn btn-outline-danger">Details</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

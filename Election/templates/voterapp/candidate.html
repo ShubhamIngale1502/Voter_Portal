@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title%}
+    <title>Candidate Details</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <h1>Candidate Details</h1>
+    <ul>
+        <li><strong>Voter ID:</strong> {{ voter.voter_id }}</li>
+        <li><strong>First Name:</strong> {{ voter.first_name }}</li>
+        <li><strong>last Name:</strong> {{ voter.last_name }}</li>
+        <li><strong>gender:</strong> {{ voter.gender }}</li>
+        <li><strong>Address:</strong> {{ voter.address}}</li>
+        <li><strong>City:</strong> {{ voter.city }}</li>
+        <li><strong>State:</strong> {{ voter.state}}</li>
+        <li><strong>Pincode:</strong> {{ voter.pincode }}</li>
+        <li><strong>date_Of_birth:</strong> {{ voter.date_of_birth }}</li>
+        <li><strong>contact:-</strong> {{ voter.contact }}</li>
+        
+        <a href = "{% url 'update' voter.pk %}" class="btn btn-outline-warning">Update</a>
+        <a href = "{% url 'delete' voter.pk %}" class="btn btn-outline-danger">Delete</a>
+
+
+    </ul>
+    {% endblock %}
+
